@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  node-app:
+    environment:
+      NODE_ENV: "${NODE_ENV}"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: "${CMD}"
+    #env_file:
+     # - ./.env
+
