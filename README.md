@@ -7,3 +7,7 @@
 Run test
 
 `$ docker-compose --env-file .env.test up -d --build`
+
+Check container logs
+
+`$ docker-compose logs node-app`
