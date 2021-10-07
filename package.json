@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "concurrently -k \"npm run build:watch\" \"npm run start:dev\"",
     "start": "tsc && node dist/index.js",
-    "dev": "nodemon -L index.js",
+    "start:dev": "nodemon -L dist/index.js",
+    "build": "tsc",
+    "build:watch": "tsc -w",
     "test": "mocha ./**/*.js"
   },
   "keywords": [],
