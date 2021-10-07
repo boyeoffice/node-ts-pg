@@ -4,4 +4,7 @@ jspm_packages
 
 # Serverless directories
 .serverless
+
 .vscode
+.env
+.env.test
