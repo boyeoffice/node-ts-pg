@@ -1,4 +1,4 @@
-### Node Docker Boilerplate
+### Node Docker boilerplate made with Typescript, PostgreSQL
 
 ### Login to container
 
