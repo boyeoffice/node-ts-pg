@@ -1,8 +1,15 @@
 version: "3"
 
+networks:
+  node-app:
+    driver: bridge
+
 services:
   node-app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node_app_server
     ports:
       - 3000:3000
     environment:
@@ -13,4 +20,25 @@ services:
     command: "${CMD}"
     #env_file:
      # - ./.env
+    depends_on:
+      - pgsql
+    networks:
+      - node-app
 
+  pgsql:
+      image: postgres:12.3
+      container_name: node_app_db
+      environment:
+        POSTGRES_USER: "${DB_USER}"
+        POSTGRES_PASSWORD: "${DB_PASSWORD}"
+        POSTGRES_DB: "${DB_DATABASE}"
+        SERVICE_TAGS: dev
+        SERVICE_NAME: pgsql
+      ports:
+        - "54321:5432"
+      networks:
+        - node-app
+
+volumes:
+  dbdata:
+    driver: local

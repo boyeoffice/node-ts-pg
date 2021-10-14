@@ -6,3 +6,4 @@ Dokerfile
 node_modules
 .git
 dist
+dbdata
