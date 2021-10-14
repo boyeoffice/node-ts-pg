@@ -3,7 +3,6 @@
 A pretty simplified Docker Compose workflow that sets up a node and postgresql network of containers for local nodejs development.
 
 ## Usage
----
 
 To get started, make sure you have  [Docker installed](https://docs.docker.com/docker-for-mac/install/) on your system, and then clone this repository.
 
@@ -37,7 +36,6 @@ Stop running containers
 
 ## Images
 
----
 
 * node:12.20.0
 * postgres:12.3
