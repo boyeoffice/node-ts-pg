@@ -35,7 +35,7 @@ services:
         SERVICE_TAGS: dev
         SERVICE_NAME: pgsql
       ports:
-        - "54321:5432"
+        - "5432:5432"
       networks:
         - node-app
 

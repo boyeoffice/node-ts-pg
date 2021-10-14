@@ -1,6 +1,6 @@
 ### Node Docker boilerplate made with Typescript, PostgreSQL
 
-A pretty simplified Docker Compose workflow that sets up a NPG network of containers for local nodejs development.
+A pretty simplified Docker Compose workflow that sets up a node and postgresql network of containers for local nodejs development.
 
 ## Usage
 ---
@@ -11,9 +11,15 @@ To get started, make sure you have  [Docker installed](https://docs.docker.com/d
 
 `$ cd node-ts-pg`
 
-Next, navigate in your terminal to the directory you cloned this, and spin up the containers for the web server by running docker-compose up -d --build site.
+`$ cp .env.example .env`
 
-### Login to container
+`$ cp .env.example .env.test`
+
+Spin up the containers
+
+`$ docker-compose up -d --build`
+
+Login to container
 
 `docker-compose exec node-app bash`
 
@@ -21,6 +27,17 @@ Run test
 
 `$ docker-compose --env-file .env.test up -d --build`
 
-Check container logs
+Check for logs
 
 `$ docker-compose logs node-app`
+
+Stop running containers
+
+`$ docker-compose stop`
+
+## Images
+
+---
+
+* node:12.20.0
+* postgres:12.3
